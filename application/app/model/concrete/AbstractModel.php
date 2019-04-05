@@ -2,7 +2,7 @@
 
 namespace App\Model\Concrete;
 
-use Core\Database\Concrete\Connection;
+use Core\Database\Connection;
 
 abstract class AbstractModel
 {

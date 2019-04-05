@@ -5,8 +5,9 @@ include_once 'Autoloader.php';
 
 $autoloader = new Autoloader();
 $autoloader->register();
-$autoloader->addNamespace('Application', __DIR__ . '/application');
+$autoloader->addNamespace('App', __DIR__ . '/application/app');
+$autoloader->addNamespace('Core', __DIR__ . 'application/core');
 
 
-$app = new \Application\Model\App();
+$app = new \App\Model\App();
 $app->run();

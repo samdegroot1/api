@@ -1,8 +1,10 @@
 <?php
 
-namespace Application\Model;
+namespace App\Model;
 
-class App
+use App\Model\Concrete\AbstractModel;
+
+class App extends AbstractModel
 {
     public function __construct()
     {

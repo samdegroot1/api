@@ -4,8 +4,11 @@ namespace App\Models;
 
 use App\Models\Concrete\AbstractModel;
 
-class App extends AbstractModel
+class TestModel extends AbstractModel
 {
+
+    public $test = 1;
+
     public function __construct()
     {
 

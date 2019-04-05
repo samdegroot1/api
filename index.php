@@ -11,7 +11,7 @@ Autoloader::getInstance()
     ->addNamespace('Util', __DIR__ . '/framework/util');
 
 
-$app = ModelFactory::getInstance('App')
+$app = ModelFactory::get('App')
     ->test();
 
 $data = [];

@@ -6,7 +6,7 @@
 namespace PHPSTORM_META
 {
     $STATIC_METHOD_TYPES = [
-        \Core\Model\ModelFactory::getInstance('') => [
+        \Core\Model\ModelFactory::get('') => [
             "" == "\App\Models\@"
         ]
     ];

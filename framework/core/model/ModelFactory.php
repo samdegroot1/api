@@ -14,7 +14,7 @@ abstract class ModelFactory
      * @return mixed
      * @throws \Exception
      */
-    public static function getInstance($model, $module = null, $forceNew = false)
+    public static function get($model, $module = null, $forceNew = false)
     {
         $qualifiedName = '\\App\\Models\\' . ($module ? 'Modules\\' . $module . '\\' . $model : $model);
 

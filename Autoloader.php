@@ -10,14 +10,32 @@ class Autoloader
      */
     protected $prefixes = array();
 
+    private static $_instance;
+
+    private function __construct()
+    {
+        // private constructor to force access by getInstance
+    }
+
+    public static function getInstance()
+    {
+        if(!isset(self::$_instance)) {
+            self::$_instance = new self();
+        }
+
+        return self::$_instance;
+    }
+
     /**
      * Register loader with SPL autoloader stack.
      *
-     * @return void
+     * @return Autoloader
      */
     public function register()
     {
         spl_autoload_register(array($this, 'loadClass'));
+
+        return $this;
     }
 
     /**
@@ -29,7 +47,8 @@ class Autoloader
      * @param bool $prepend If true, prepend the base directory to the stack
      * instead of appending it; this causes it to be searched first rather
      * than last.
-     * @return void
+     *
+     * @return Autoloader
      */
     public function addNamespace($prefix, $base_dir, $prepend = false)
     {
@@ -50,6 +69,8 @@ class Autoloader
         } else {
             array_push($this->prefixes[$prefix], $base_dir);
         }
+
+        return $this;
     }
 
     /**

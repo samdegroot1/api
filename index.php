@@ -1,17 +1,19 @@
 <?php
 
+use Core\Model\ModelFactory;
+use Framework\Util\ArrayUtils;
 
 require_once 'Autoloader.php';
 
-$autoloader = new Autoloader();
-$autoloader->register();
-$autoloader->addNamespace('Core', __DIR__ . '/framework/core');
-$autoloader->addNamespace('App', __DIR__ . '/application');
-$autoloader->addNamespace('Util', __DIR__ . '/framework/util');
+Autoloader::getInstance()
+    ->addNamespace()
+    ->addNamespace('Core', __DIR__ . '/framework/core')
+    ->addNamespace('App', __DIR__ . '/application')
+    ->addNamespace('Util', __DIR__ . '/framework/util');
 
 
-$app = \Core\Model\ModelFactory::getInstance('App')
+$app = ModelFactory::getInstance('App')
     ->test();
 
 $data = [];
-\Util\ArrayUtils::keepKeys($data, $data);
+ArrayUtils::keepKeys($data, $data);

@@ -109,16 +109,20 @@ class Autoloader
         // look through base directories for this namespace prefix
         foreach ($this->prefixes[$prefix] as $base_dir) {
 
-            //keep directories lowercase
-            $relative_dir = strtolower(substr($relative_class, 0, (strrpos($relative_class, '\\') + 1)));
-            $relative_class = substr($relative_class, (strrpos($relative_class, '\\') + 1));
-            $relative_class = $relative_dir . $relative_class;
+            if(strrpos($relative_class, '\\') !== false) {
+                //keep directories lowercase
+                $relative_dir = strtolower(substr($relative_class, 0, (strrpos($relative_class, '\\') + 1)));
+                $relative_class = substr($relative_class, (strrpos($relative_class, '\\') + 1));
+                $dirClass = $relative_dir . $relative_class;
+            } else {
+                $dirClass = $relative_class;
+            }
 
             // replace the namespace prefix with the base directory,
             // replace namespace separators with directory separators
             // in the relative class name, append with .php
             $file = $base_dir
-                . str_replace('\\', '/', $relative_class)
+                . str_replace('\\', '/', $dirClass)
                 . '.php';
 
             // if the mapped file exists, require it

@@ -2,17 +2,9 @@
 
 namespace Core\Model;
 
-class CoreModel
+abstract class ModelFactory
 {
     private static $_instances = [];
-
-    /**
-     * App constructor.
-     */
-    protected function __construct()
-    {
-        parent::__construct();
-    }
 
     /**
      * @param        $model
@@ -22,9 +14,9 @@ class CoreModel
      * @return mixed
      * @throws \Exception
      */
-    public static function factory($model, $module = null, $forceNew = false)
+    public static function getInstance($model, $module = null, $forceNew = false)
     {
-        $qualifiedName = '\\App\\Model\\' . ($module ? $module . '\\' . $model : $model);
+        $qualifiedName = '\\App\\Models\\' . ($module ? 'Modules\\' . $module . '\\' . $model : $model);
 
         if(!class_exists($qualifiedName, true)) {
             throw new \Exception("Class $model not found.");

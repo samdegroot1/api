@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Model;
+namespace App\Models;
 
-use App\Model\Concrete\AbstractModel;
+use App\Models\Concrete\AbstractModel;
 
 class App extends AbstractModel
 {
     public function __construct()
     {
-        parent::__construct();
+
     }
 
     public function test()

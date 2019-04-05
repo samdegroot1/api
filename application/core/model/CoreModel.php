@@ -15,15 +15,16 @@ class CoreModel
     }
 
     /**
-     * @param $model
-     * @param $forceNew
+     * @param        $model
+     * @param string $module
+     * @param bool   $forceNew
      *
      * @return mixed
      * @throws \Exception
      */
-    public static function factory($model, $forceNew = false)
+    public static function factory($model, $module = null, $forceNew = false)
     {
-        $qualifiedName = '\\App\\Model\\' .$model;
+        $qualifiedName = '\\App\\Model\\' . ($module ? $module . '\\' . $model : $model);
 
         if(!class_exists($qualifiedName, true)) {
             throw new \Exception("Class $model not found.");

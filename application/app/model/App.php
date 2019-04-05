@@ -6,17 +6,13 @@ use App\Model\Concrete\AbstractModel;
 
 class App extends AbstractModel
 {
-    /**
-     * App constructor.
-     */
     public function __construct()
     {
         parent::__construct();
     }
 
-    public function run()
+    public function test()
     {
-        echo 'Hello world!';
+        echo 'Factory working';
     }
-
 }

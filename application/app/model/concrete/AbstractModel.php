@@ -12,7 +12,7 @@ abstract class AbstractModel
     /**
      * AbstractModel constructor.
      */
-    protected function __construct()
+    public function __construct()
     {
         $this->_initConnection();
     }

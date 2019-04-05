@@ -14,7 +14,7 @@ class Autoloader
 
     private function __construct()
     {
-        // private constructor to force access by getInstance
+        $this->register();
     }
 
     public static function getInstance()
@@ -31,7 +31,7 @@ class Autoloader
      *
      * @return Autoloader
      */
-    public function register()
+    private function register()
     {
         spl_autoload_register(array($this, 'loadClass'));
 

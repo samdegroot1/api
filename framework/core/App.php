@@ -6,7 +6,7 @@ use Core\Model\ModelFactory;
 
 class App
 {
-    private static $_instance = null;
+    private static $instance = null;
 
     /**
      * private App constructor.
@@ -21,11 +21,11 @@ class App
      */
     public static function getInstance()
     {
-        if(!isset(self::$_instance)) {
-            self::$_instance = new self();
+        if(!isset(self::$instance)) {
+            self::$instance = new self();
         }
 
-        return self::$_instance;
+        return self::$instance;
     }
 
     /**

@@ -4,7 +4,7 @@ namespace Core\Model;
 
 abstract class ModelFactory
 {
-    private static $_instances = [];
+    private static $instances = [];
 
     /**
      * @param        $model
@@ -24,11 +24,11 @@ abstract class ModelFactory
 
         $registerName = trim(strtolower($qualifiedName));
 
-        if(isset(self::$_instances[$registerName]) && !$forceNew) {
-            return self::$_instances[$registerName];
+        if(isset(self::$instances[$registerName]) && !$forceNew) {
+            return self::$instances[$registerName];
         }
-        self::$_instances[$registerName] = new $qualifiedName();
+        self::$instances[$registerName] = new $qualifiedName();
 
-        return self::$_instances[$registerName];
+        return self::$instances[$registerName];
     }
 }

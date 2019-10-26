@@ -4,7 +4,7 @@ namespace Core\Database;
 
 class Connection
 {
-    private static $_instance = null;
+    private static $instance = null;
 
     /**
      * Connection constructor.
@@ -21,11 +21,11 @@ class Connection
      */
     public static function getInstance($forceNew = false)
     {
-        if(!isset(self::$_instance) || $forceNew) {
-            self::$_instance = new self();
+        if(!isset(self::$instance) || $forceNew) {
+            self::$instance = new self();
         }
 
-        return self::$_instance;
+        return self::$instance;
     }
 
     /**

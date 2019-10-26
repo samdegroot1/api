@@ -34,6 +34,9 @@ class App
      */
     public function run()
     {
-        print_r(ModelFactory::get('TestModel'));
+        $obj = ModelFactory::get('TestModel');
+
+        $connection = $obj->getConnection();
+
     }
 }

@@ -11,11 +11,11 @@ class TestModel extends AbstractModel
 
     public function __construct()
     {
-
+        parent::__construct();
     }
 
     public function test()
     {
-        echo 'Factory working';
+
     }
 }

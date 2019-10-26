@@ -1,7 +1,8 @@
 {
     "require": {
         "vlucas/phpdotenv": "^3.3",
-      "ext-curl": "*"
+      "ext-curl": "*",
+      "ext-pdo": "*"
     },
     "config": {
         "vendor-dir": "framework/lib"

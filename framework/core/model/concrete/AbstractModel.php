@@ -8,7 +8,7 @@ abstract class AbstractModel
 
    public function __construct()
     {
-        $this->setupConnection();
+
     }
 
     protected function setupConnection()

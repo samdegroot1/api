@@ -1,6 +1,6 @@
 <?php
 
-use Core\Model\App;
+use Core\App;
 use Core\Model\ModelFactory;
 use Dotenv\Dotenv;
 use Util\ArrayUtils;

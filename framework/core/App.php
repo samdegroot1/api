@@ -1,11 +1,10 @@
 <?php
 
-namespace Core\Model;
+namespace Core;
 
-use Core\Model\Concrete\AbstractModel;
-use Util\Curl;
+use Core\Model\ModelFactory;
 
-class App extends AbstractModel
+class App
 {
     private static $_instance = null;
 

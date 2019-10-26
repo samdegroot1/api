@@ -16,7 +16,7 @@ abstract class ModelFactory
      */
     public static function get($model, $module = null, $forceNew = false)
     {
-        $qualifiedName = '\\App\\Models\\' . ($module ? 'Modules\\' . $module . '\\' . $model : $model);
+        $qualifiedName = '\\App\\Model\\' . ($module ? 'Modules\\' . $module . '\\' . $model : $model);
 
         if(!class_exists($qualifiedName, true)) {
             throw new \Exception("Class $model not found.");

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers\Concrete;
+namespace App\Controller\Concrete;
 
 abstract class AbstractController extends \Core\Controller\AbstractController
 {

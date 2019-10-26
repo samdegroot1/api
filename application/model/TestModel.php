@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace App\Model;
 
-use App\Models\Concrete\AbstractModel;
+use App\Model\Concrete\AbstractModel;
 
 class TestModel extends AbstractModel
 {

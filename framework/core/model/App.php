@@ -3,6 +3,7 @@
 namespace Core\Model;
 
 use Core\Model\Concrete\AbstractModel;
+use Util\Curl;
 
 class App extends AbstractModel
 {
@@ -30,10 +31,10 @@ class App extends AbstractModel
 
     /**
      * Start application for the first time.
-     * Initialize database connection and save metadata caches.
+     * Initialize database connection and save metadata caches. Start routing/bootstrapping.
      */
     public function run()
     {
-
+        print_r(ModelFactory::get('TestModel'));
     }
 }

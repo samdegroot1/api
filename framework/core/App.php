@@ -34,6 +34,15 @@ class App
      */
     public function run()
     {
-        $obj = ModelFactory::get('TestModel');
+        $data = ModelFactory::get('User')
+            ->getAdapter()
+            ->fetchAll('select * from user where id = :id', [
+                'id' => 1
+            ]);
+
+        echo "<pre>";
+        print_r($data);
+        echo "</pre>";
+        die();
     }
 }

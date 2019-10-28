@@ -4,18 +4,12 @@ namespace App\Model;
 
 use App\Model\Concrete\AbstractModel;
 
-class TestModel extends AbstractModel
+class User extends AbstractModel
 {
-
-    public $test = 1;
-
+    protected $tableName = 'user';
+    
     public function __construct()
     {
         parent::__construct();
-    }
-
-    public function test()
-    {
-
     }
 }
